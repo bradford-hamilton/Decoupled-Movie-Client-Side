@@ -21,7 +21,6 @@
           url: 'http://localhost:3000/auth/signup'
         })
         .then(function(response) {
-          console.log("right before login");
           LoginService.loginUser(username, password);
         }, function(err) {
           console.log(err);

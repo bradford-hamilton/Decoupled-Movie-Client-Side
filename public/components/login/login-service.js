@@ -1,4 +1,5 @@
 (function() {
+
   angular
     .module('MovieAPIClientSide.login.login-service', [])
     .service('LoginService', LoginService);
@@ -37,6 +38,7 @@
           url: 'http://localhost:3000/auth/login'
         })
         .then(function(response) {
+          console.log(response.data);
           _setUserData(response.data);
           $location.path('/list');
         }, function(err) {

@@ -1,0 +1,5 @@
+<h5>{{ listItem.title }}</h5>
+<p>{{ listItem.description }}</p>
+<img ng-src="{{ listItem.image_url }}" alt="Image not available for this movie.">
+<button class='btn waves-effect red' type="button" ng-click='deleteItem(listItem.id)'>Delete this movie</button>
+<hr>
