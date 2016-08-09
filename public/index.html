@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Angular Movie-API-Client-Side</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+</head>
+  <body ng-app='MovieAPIClientSide'>
+
+  <header class='header-footer'>
+    <nav class='orange accent-3'>
+      <div class="nav-wrapper container">
+        <a ui-sref="home" class="brand-logo">Movie API Client Side</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a target="_blank" href="#">Github</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+    <main>
+      <div ui-view></div>
+    </main>
+
+    <footer class="page-footer orange accent-3 header-footer">
+      <div class="footer-copyright orange accent-3">
+        <div class="container">
+          © 2016 Bradford Lamson-Scribner
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="/app.js"></script>
+    <script src="/components/signup/signup.js"></script>
+    <script src="/components/signup/signup-directive.js"></script>
+    <script src="/components/signup/signup-service.js"></script>
+    <script src="/components/login/login.js"></script>
+    <script src="/components/login/login-directive.js"></script>
+    <script src="/components/login/login-service.js"></script>
+  </body>
+</html>
