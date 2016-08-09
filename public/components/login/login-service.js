@@ -34,8 +34,8 @@
             username: username,
             password: password
           },
-          // url: 'http://cors-anywhere.herokuapp.com/http://movie-place.herokuapp.com/auth/login'
-          url: 'http://localhost:3000/auth/login'
+          url: 'https://decoupled-movie-app-api.herokuapp.com/auth/login'
+          // url: 'http://localhost:3000/auth/login'
         })
         .then(function(response) {
           _setUserData(response.data);

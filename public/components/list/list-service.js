@@ -22,7 +22,8 @@
           headers: {
             Authorization: 'Bearer ' + LoginService.getToken()
           },
-          url: 'http://localhost:3000/api/movies/' + LoginService.getUserId()
+          url: 'https://decoupled-movie-app-api.herokuapp.com/api/movies/' + LoginService.getUserId()
+          // url: 'http://localhost:3000/api/movies/' + LoginService.getUserId()
         })
         .then(function(response) {
           deferred.resolve(response.data.movies);
@@ -48,7 +49,8 @@
             rating: newListItem.rating,
             user_id: LoginService.getUserId()
           },
-          url: 'http://localhost:3000/api/movies'
+          url: 'https://decoupled-movie-app-api.herokuapp.com/api/movies'
+          // url: 'http://localhost:3000/api/movies'
         })
         .then(function(response) {
           deferred.resolve(response.data.movies);
@@ -74,7 +76,8 @@
             image_url: listItem.image_url,
             rating: listItem.rating
           },
-          url: 'http://localhost:3000/api/movies/' + listItem.id
+          url: 'https://decoupled-movie-app-api.herokuapp.com/api/movies/' + listItem.id
+          // url: 'http://localhost:3000/api/movies/' + listItem.id
         })
         .then(function(response) {
           deferred.resolve(response.data.movies);
@@ -96,7 +99,8 @@
             user_id: LoginService.getUserId(),
             movie_id: id
           },
-          url: 'http://localhost:3000/api/movies/' + id
+          url: 'https://decoupled-movie-app-api.herokuapp.com/api/movies/' + id
+          // url: 'http://localhost:3000/api/movies/' + id
         })
         .then(function(response) {
           deferred.resolve(response.data.movies);
