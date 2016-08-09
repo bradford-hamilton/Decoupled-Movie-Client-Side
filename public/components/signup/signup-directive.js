@@ -18,9 +18,7 @@
     SignupController.$inject = ['SignupService'];
 
     function SignupController(SignupService) {
-      SignupController = this;
-
-      SignupController.submit = function(username, password) {
+      this.submit = function(username, password) {
         SignupService.createUser(username, password);
       };
     }

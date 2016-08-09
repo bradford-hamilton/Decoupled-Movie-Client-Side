@@ -10,6 +10,7 @@
       return {
         getListItems: getListItems,
         createListItem: createListItem,
+        editListItem: editListItem,
         deleteListItem: deleteListItem
       };
 
@@ -26,7 +27,7 @@
         .then(function(response) {
           deferred.resolve(response.data.movies);
         }, function(err) {
-          console.log(err);
+          deferred.reject(err);
         });
         return deferred.promise;
       }
@@ -52,7 +53,33 @@
         .then(function(response) {
           deferred.resolve(response.data.movies);
         }, function(err) {
-          console.log(err);
+          deferred.reject(err);
+        });
+        return deferred.promise;
+      }
+
+      function editListItem(listItem) {
+        var deferred = $q.defer();
+
+        $http({
+          method: 'PUT',
+          headers: {
+            Authorization: 'Bearer ' + LoginService.getToken()
+          },
+          params: {
+            movie_id: listItem.id,
+            title: listItem.title,
+            description: listItem.description,
+            year: listItem.year,
+            image_url: listItem.image_url,
+            rating: listItem.rating
+          },
+          url: 'http://localhost:3000/api/movies/' + listItem.id
+        })
+        .then(function(response) {
+          deferred.resolve(response.data.movies);
+        }, function(err) {
+          deferred.reject(err);
         });
         return deferred.promise;
       }
@@ -75,11 +102,10 @@
           deferred.resolve(response.data.movies);
           $state.reload();
         }, function(err) {
-          console.log(err);
+          deferred.reject(err);
         });
         return deferred.promise;
       }
-
     }
 
 })();

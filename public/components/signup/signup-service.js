@@ -23,7 +23,7 @@
         .then(function(response) {
           LoginService.loginUser(username, password);
         }, function(err) {
-          console.log(err);
+          return err;
         });
       }
     }

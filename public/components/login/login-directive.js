@@ -18,9 +18,7 @@
     LoginController.$inject = ['LoginService'];
 
     function LoginController(LoginService) {
-      LoginController = this;
-
-      LoginController.submit = function(username, password) {
+      this.submit = function(username, password) {
         LoginService.loginUser(username, password);
       };
     }

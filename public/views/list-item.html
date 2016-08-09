@@ -2,4 +2,21 @@
 <p>{{ listItem.description }}</p>
 <img ng-src="{{ listItem.image_url }}" alt="Image not available for this movie.">
 <button class='btn waves-effect red' type="button" ng-click='deleteItem(listItem.id)'>Delete this movie</button>
+<button class='btn waves-effect brown lighten-1' type="button" ng-click='showForm()'>Edit this movie</button>
+
+<!-- hidden edit form  -->
+<div class="container">
+  <div class="row">
+    <br><br>
+    <form ng-hide='hideForm' ng-submit='editItem(listItem)'>
+      <input ng-model='listItem.title' type='text' required>
+      <input ng-model='listItem.description' type='text' required>
+      <input ng-model='listItem.year' type='text' required>
+      <input ng-model='listItem.image_url' type='text' required>
+      <input ng-model='listItem.rating' type='text' required>
+      <button type="submit" class="btn waves-effect green">Submit movie!</button>
+    </form>
+  </div>
+</div>
+
 <hr>

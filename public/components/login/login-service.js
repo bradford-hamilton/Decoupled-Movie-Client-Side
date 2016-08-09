@@ -14,7 +14,7 @@
         getToken: getToken,
         getUserId: getUserId
       };
-
+      // function to get the JWT token
       function getToken() {
         return user.token;
       }
@@ -38,11 +38,10 @@
           url: 'http://localhost:3000/auth/login'
         })
         .then(function(response) {
-          console.log(response.data);
           _setUserData(response.data);
           $location.path('/list');
         }, function(err) {
-          console.log(err);
+          return err;
         });
       }
     }

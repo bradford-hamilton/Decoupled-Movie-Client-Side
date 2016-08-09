@@ -6,8 +6,9 @@
       "MovieAPIClientSide.login",
       "MovieAPIClientSide.list"
     ])
+    .config(config);
 
-    .config(["$stateProvider", "$urlRouterProvider", "$locationProvider", function($stateProvider, $urlRouterProvider, $locationProvider) {
+    function config($stateProvider, $urlRouterProvider, $locationProvider) {
       $urlRouterProvider.otherwise("/");
       $stateProvider
         .state('home', {
@@ -20,5 +21,5 @@
           controller: 'ListController'
         });
         $locationProvider.html5Mode(true);
-      }]);
+    }
 })();
